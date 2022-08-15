@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://kit.fontawesome.com/dbca0d4e5f.js" crossorigin="anonymous"></script>
+    <title>Contact us</title>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html"><img src="images/logo.jpg"></a>
+        <div class="nav-links" id="navLinks">
+           <i class="fa fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="courses.html">COURSES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+        <div class="wrapper">Contact Us
+
+            <div id="error_message"></div>
+            <form id="myform" onsubmit="return validate();">
+            <div class="input_field">
+                <input type="text" placeholder="Enter Your Name" id="name">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Enter Your Phone Number" id="phone">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Enter Your a Valid Email Address" id="email">
+            </div>
+            <div class="input_field">
+                <textarea placeholder="Enter Your Message" id="message"></textarea>
+            </div>
+            <div class="btn">
+                <input type="submit">
+            </div>
+            </form>
+        </div>
+
+        <div class="moreinfo">
+            <img src="images/info.jpg">
+            <h3>Postal Address</h3><br>
+            <div class="address">
+
+                <div class="addressinfo">
+                    <p>Godawari, Lalitpur, Nepal</p>
+                </div>
+                <i class="fa-solid fa-location-dot" style="color: #929292; font-size: 30px;"></i><br><br>
+
+                <div class="numberinfo">
+                    <p>+977 9739654321</p>
+                </div>
+                <i class="fa-solid fa-phone" style="color: #929292; font-size: 30px;"></i><br><br>
+
+                <div class="mailinfo">
+                    <p>someone@gmail.com</p>
+                </div> 
+                <i class="fa-solid fa-envelope" style="color: #929292; font-size: 30px;"></i></a><br><br><br>
+                <p>In case of urgency, please feel free to contact us
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+    </section>
+    <section>
+        <div class="script">
+                    <script>
+                        function validate(){
+                            var name = document.getElementById("name").value;
+                            var phone = document.getElementById("phone").value;
+                            var email = document.getElementById("email").value;
+                            var message = document.getElementById("message").value;
+                            var error_message = document.getElementById("error_message");
+
+                            error_message.style.padding = "10px";
+
+                            var text;
+                            if(name.length < 5){
+                            text = "Please Enter valid Name";
+                            error_message.innerHTML = text;
+                            return false;
+                            }
+                            if(isNaN(phone)  (phone).length != 10){
+                            text = "Please Enter valid Phone Number";
+                            error_message.innerHTML = text;
+                            return false;
+                            }
+                            if(email.indexOf("@") == -1  (email).length < 6){
+                            text = "Please Enter valid Email";
+                            error_message.innerHTML = text;
+                            return false;
+                            }
+                            if(message.length <= 5){
+                            text = "Please Enter More Than 140 Characters";
+                            error_message.innerHTML = text;
+                            return false;
+                            }
+                            alert("Form Submitted Successfully!");
+                            return true;
+                        }
+                    </script>
+                </div>
+    </section>
+                
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam hic non veniam ab, pariatur consequatur a ducimus nobis distinctio.<br>Quas aperiam incidunt sed quis facilis numquam temporibus eum illum ea.</p>
+            <div class="socials">
+                <div class="icons">
+                    <ul style="list-style-type:none;">
+                        <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></i></a></li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>Made with <i class="fa fa-heart"></i></p>
+        </div>
+    </footer>
+
+    
+
+    
+</body>
+
+</html>
